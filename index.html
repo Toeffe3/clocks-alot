@@ -17,6 +17,7 @@
     }
     function setInfo() {
       document.getElementById("Name").innerHTML = information.Name;
+      document.getElementById("id").innerHTML = script;
       document.getElementById("Contributor").innerHTML = information.Contributor;
       document.getElementById("Desription").innerHTML = information.Decription;
     }
@@ -44,7 +45,7 @@
   </head>
   <body onload="setInfo()">
     <div class="info">
-      <p>"<span id="Name"></span>" by <span id="Contributor"></span> - <span id="Desription"></span></p>
+      <p>"<span id="Name"></span>" (#<span id="id"></span>) by <span id="Contributor"></span> - <span id="Desription"></span></p>
     </div>
   </body>
 </html>
