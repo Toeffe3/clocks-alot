@@ -7,13 +7,14 @@
     <script id="change" charset="utf-8"></script>
     <script type="text/javascript">
     let amo = 4,
-    showInfo = false,
-    script = document.location.hash.charAt(1)||(Math.floor(Math.random()*amo)+1);
+        showInfo = false,
+        script = document.location.hash.charAt(1)||(Math.floor(Math.random()*amo)+1);
+    
     document.getElementById("change").setAttribute("src", "scripts/c"+script+".js");
 
     function keyPressed() {
       document.getElementsByClassName("info")[0].style.display = showInfo?"block":"none";
-      showInfo =!showInfo;
+      showInfo =! showInfo;
     }
     function setInfo() {
       document.getElementById("Name").innerHTML = information.Name;
