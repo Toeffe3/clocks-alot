@@ -7,17 +7,44 @@
     <script id="change" charset="utf-8"></script>
     <script type="text/javascript">
     let amo = 4,
+    showInfo = false,
     script = document.location.hash.charAt(1)||(Math.floor(Math.random()*amo)+1);
     document.getElementById("change").setAttribute("src", "scripts/c"+script+".js");
+
+    function keyPressed() {
+      document.getElementsByClassName("info")[0].style.display = showInfo?"block":"none";
+      showInfo =!showInfo;
+    }
+    function setInfo() {
+      document.getElementById("Name").innerHTML = information.Name;
+      document.getElementById("Contributor").innerHTML = information.Contributor;
+      document.getElementById("Desription").innerHTML = information.Decription;
+    }
     </script>
     <style media="screen">
-      body {
+      body, * {
         margin: 0;
         padding: 0;
         overflow: hidden;
+        background-color: transparent;
+      }
+      canvas {
+        position: absolute;
+        top: 0px;
+      }
+      p {
+        color: #fff;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        background-color: #0005;
+        padding: 2px;
       }
     </style>
   </head>
-  <body>
+  <body onload="setInfo()">
+    <div class="info">
+      <p>"<span id="Name"></span>" by <span id="Contributor"></span> - <span id="Desription"></span></p>
+    </div>
   </body>
 </html>
