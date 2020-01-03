@@ -6,5 +6,5 @@ https://toeffe3.github.io/clocks-alot/index.html
 
 Press any key to hide information.
 
-To specefie a clock append the url with a "hash"-sign and the id, like:
+To specefy a clock append the url with a "hash"-sign and the id, like:
 https://toeffe3.github.io/clocks-alot/index.html#1
