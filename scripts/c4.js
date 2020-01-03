@@ -1,5 +1,10 @@
-function setup(){createCanvas(windowWidth,windowHeight);}
+let information = {
+  Contributor: "Toeffe3",
+  Name: "Sky Falling clock",
+  Decription: "Position of time-components is mapped form top to bottom"
+};
 
+function setup(){createCanvas(windowWidth,windowHeight);}
 function draw() {
   background(0,15);
   textSize(80);
@@ -10,6 +15,5 @@ function draw() {
   text(":",windowWidth/3*2-20,windowHeight/2);
   text(towdigits(second()),windowWidth/4*3-40,second()/64*windowHeight+70);
 }
-
 function towdigits(str){if((str+"").length<2){return"0"+str}return str}
 function windowResized(){resizeCanvas(windowWidth,windowHeight)}
