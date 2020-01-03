@@ -37,19 +37,11 @@ function draw(){
   document.body.style.backgroundColor = "#"+c+c+c;
   let on = color(255,128,0);
   let off = color(128,64,0);
-  noFill(off)
-  for (var i = 0; i < arr.length; i++) {
-    form((i<hour()%12)?on:off,1,arr[i][0],arr[i][1],arr[i][2],arr[i][3]);
-  }
-  for (var i = 0; i < arr2.length; i++) {
-    form((i<minute()%10)?on:off,2,arr2[i][0],arr2[i][1]);
-  }
-  for (var i = 0; i < arr3.length; i++) {
-    form((i<floor(minute()/10))?on:off,3,arr3[i][0],arr3[i][1],arr3[i][2],arr3[i][3]);
-  }
+  noFill(off);
+  for (var i = 0; i < arr.length; i++)  form((i<hour()%12)?on:off,1,arr[i][0],arr[i][1],arr[i][2],arr[i][3]);
+  for (var i = 0; i < arr2.length; i++) form((i<minute()%10)?on:off,2,arr2[i][0],arr2[i][1]);
+  for (var i = 0; i < arr3.length; i++) form((i<floor(minute()/10))?on:off,3,arr3[i][0],arr3[i][1],arr3[i][2],arr3[i][3]);
 }
-
-function towdigits(str){if((str+"").length<2){return"0"+str}return str}
 
 function form(c, t, x, y, xs, ys) {
   noFill();
@@ -57,13 +49,15 @@ function form(c, t, x, y, xs, ys) {
   strokeWeight(10);
   switch (t) {
     case 1:
-      line(x,y,x+xs,y)
-      line(x+xs,y,x+xs*1.25,y+ys*.25)
-      break;
+    line(x,y,x+xs,y)
+    line(x+xs,y,x+xs*1.25,y+ys*.25)
+    break;
     case 2:
-      line(x,y,x,y+30)
-      break;
+    line(x,y,x,y+30)
+    break;
     case 3:
-      arc(x, y, xs, ys, 0, PI);
+    arc(x, y, xs, ys, 0, PI);
   }
 }
+function towdigits(str){if((str+"").length<2){return"0"+str}return str}
+function windowResized(){resizeCanvas(windowWidth,windowHeight)}
