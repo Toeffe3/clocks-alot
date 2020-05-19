@@ -6,9 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js" charset="utf-8"></script>
     <script id="change" charset="utf-8"></script>
     <script type="text/javascript">
-    let amo = 4,
+    let amo = 10,
     showInfo = false,
-    script = document.location.hash.charAt(1)||(Math.floor(Math.random()*amo)+1);
+    script = document.location.hash.replace("#","")||(Math.floor(Math.random()*amo)+1);
     document.getElementById("change").setAttribute("src", "scripts/c"+script+".js");
 
     function keyPressed() {
